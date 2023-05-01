@@ -17,21 +17,23 @@ function App() {
         emailToSupport="support@xyz.com"
       ></ScreenRecording>
 
-      <button
-        onClick={() => {
-          setshowcamera(true);
-        }}
-      >
-        SHow camera
-      </button>
-
-      <button
-        onClick={() => {
-          setshowcamera(false);
-        }}
-      >
-        off camera
-      </button>
+      {showcamera ? (
+        <button
+          onClick={() => {
+            setshowcamera(true);
+          }}
+        >
+          camera on
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setshowcamera(false);
+          }}
+        >
+          camera off
+        </button>
+      )}
 
       {showcamera && <Profile />}
     </div>
